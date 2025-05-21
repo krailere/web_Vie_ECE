@@ -1,0 +1,15 @@
+
+CREATE TABLE vde (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pseudo VARCHAR(50) NOT NULL,
+    content TEXT NOT NULL,
+    date DATETIME NOT NULL
+);
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vde_id INT NOT NULL,
+    pseudo VARCHAR(50) NOT NULL,
+    comment TEXT NOT NULL,
+    date DATETIME NOT NULL,
+    FOREIGN KEY (vde_id) REFERENCES vde(id) ON DELETE CASCADE
+);
